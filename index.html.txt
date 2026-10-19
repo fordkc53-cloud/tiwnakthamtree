@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="th" class="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>สรุปข้อสอบเก็ง นักธรรมชั้นตรี - คู่มือเตรียมสอบโต้ตอบ</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Sarabun', 'sans-serif'],
+                    },
+                    colors: {
+                        amber: {
+                            50: '#fffbeb',
+                            100: '#fef3c7',
+                            200: '#fde68a',
+                            300: '#fcd34d',
+                            400: '#fbbf24',
+                            500: '#f59e0b',
+                            600: '#d97706',
+                            700: '#b45309',
+                            800: '#92400e',
+                            900: '#78350f',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .custom-scrollbar::-webkit-scrollbar {
+            height: 6px;
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: rgba(0,0,0,0.05);
+            border-radius: 8px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: rgba(217, 119, 6, 0.4);
+            border-radius: 8px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: rgba(217, 119, 6, 0.7);
+        }
+        .flip-card-inner {
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
+        .flip-card-flipped .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+        .flip-card-front, .flip-card-back {
+            backface-visibility: hidden;
+        }
+        .flip-card-back {
+            transform: rotateY(180deg);
+        }
+    </style>
+</head>
+<body class="bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-100 font-sans min-h-screen transition-colors duration-200">
+
+    <!-- Header Section -->
+    <header class="bg-gradient-to-r from-amber-600 via-amber-500 to-amber-700 text-white shadow-lg sticky top-0 z-30">
+        <div class="max-w-5xl mx-auto px-4 py-3.5 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <!-- Dharmachakra Icon -->
+                <div class="bg-white/20 p-2 rounded-xl backdrop-blur-sm">
+                    <svg class="w-7 h-7 text-amber-100" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="9" />
+                        <circle cx="12" cy="12" r="3" />
+                        <path d="M12 3v6M12 15v6M3 12h6M15 12h6M5.6 5.6l4.3 4.3M14.1 14.1l4.3 4.3M5.6 18.4l4.3-4.3M14.1 9.9l4.3-4.3" />
+                    </svg>
+                </div>
+                <div>
+                    <h1 class="text-xl md:text-2xl font-bold tracking-tight leading-tight">คู่มือสอบนักธรรมชั้นตรี</h1>
+                    <p class="text-xs text-amber-100 opacity-90 hidden sm:block">สรุปข้อสอบเก็ง 3 รายวิชา พร้อมระบบบันทึกการทบทวน</p>
+                </div>
+            </div>
+
+            <!-- Top Action Buttons -->
+            <div class="flex items-center space-x-2">
+                <button id="themeToggleBtn" onclick="toggleTheme()" class="p-2 rounded-lg bg-white/10 hover:bg-white/20 text-white transition focus:outline-none" title="เปลี่ยนธีม สว่าง/มืด">
+                    <svg id="sunIcon" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                    <svg id="moonIcon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9 9 0 1012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+                </button>
+                <button onclick="confirmReset()" class="p-2 rounded-lg bg-white/10 hover:bg-red-500/80 text-white transition text-xs font-medium flex items-center space-x-1" title="ล้างสถิติที่บันทึกไว้">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg>
+                    <span class="hidden md:inline">รีเซ็ต</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="max-w-5xl mx-auto px-4 py-6">
+
+        <!-- Progress Stats Dashboard Card -->
+        <section class="bg-white dark:bg-slate-800 rounded-2xl p-5 mb-6 shadow-sm border border-slate-200/80 dark:border-slate-700/60 transition-all">
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4">
+                <div>
+                    <h2 class="text-lg font-bold text-slate-800 dark:text-slate-100 flex items-center gap-2">
+                        <span>ความก้าวหน้าการเรียนรู้</span>
+                        <span id="overallPercentBadge" class="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-amber-100 dark:bg-amber-900/50 text-amber-800 dark:text-amber-300">0%</span>
+                    </h2>
+                    <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">ติ๊กเครื่องหมายถูกหน้าข้อที่คุณอ่านและจดจำเนื้อหาได้แล้ว</p>
+                </div>
+                <!-- Controls & Modes -->
+                <div class="flex flex-wrap items-center gap-2">
+                    <button onclick="openFlashcardModal()" class="flex-1 sm:flex-none px-3.5 py-2 rounded-xl bg-amber-500 hover:bg-amber-600 text-white font-semibold text-xs sm:text-sm shadow-sm transition flex items-center justify-center space-x-1.5">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
+                        <span>ฝึกสุ่มการ์ดคำถาม (Flashcard)</span>
+                    </button>
+                    <button id="toggleAnswersGlobalBtn" onclick="toggleAllAnswers()" class="px-3.5 py-2 rounded-xl bg-slate-100 dark:bg-slate-700 hover:bg-slate-200 dark:hover:bg-slate-600 text-slate-700 dark:text-slate-200 font-medium text-xs sm:text-sm transition flex items-center justify-center space-x-1.5">
+                        <svg id="eyeIcon" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
+                        <span id="toggleAnswersText">ซ่อนเฉลยทั้งหมด</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Main Overall Progress Bar -->
+            <div class="w-full bg-slate-100 dark:bg-slate-700 rounded-full h-3.5 overflow-hidden mb-4 p-0.5">
+                <div id="overallProgressBar" class="bg-gradient-to-r from-amber-500 to-amber-600 h-full rounded-full transition-all duration-500 ease-out" style="width: 0%"></div>
+            </div>
+
+            <!-- Subject Mini Breakdown -->
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2 text-xs">
+                <div class="bg-slate-50 dark:bg-slate-700/50 p-2.5 rounded-xl border border-slate-100 dark:border-slate-700">
+                    <div class="flex justify-between items-center mb-1">
+                        <span class="font-medium text-amber-700 dark:text-amber-400">1. วิชาธรรม</span>
+                        <span id="dhammaStat" class="text-slate-500 dark:text-slate-400">0/14 (0%)</span>
+                    </div>
+                    <div class="w-full bg-slate-200 dark:bg-slate-600 h-1.5 rounded-full overflow-hidden">
+                        <div id="dhammaBar" class="bg-amber-500 h-full transition-all duration-300" style="width: 0%"></div>
+                    </div>
+                </div>
+                <div class="bg-slate-50 dark:bg-slate-700/50 p-2.5 rounded-xl border border-slate-100 dark:border-slate-700">
+                    <div class="flex justify-between items-center mb-1">
+                        <span class="font-medium text-amber-700 dark:text-amber-400">2. วิชาพุทธประวัติ</span>
+                        <span id="historyStat" class="text-slate-500 dark:text-slate-400">0/14 (0%)</span>
+                    </div>
+                    <div class="w-full bg-slate-200 dark:bg-slate-600 h-1.5 rounded-full overflow-hidden">
+                        <div id="historyBar" class="bg-amber-500 h-full transition-all duration-300" style="width: 0%"></div>
+                    </div>
+                </div>
+                <div class="bg-slate-50 dark:bg-slate-700/50 p-2.5 rounded-xl border border-slate-100 dark:border-slate-700">
+                    <div class="flex justify-between items-center mb-1">
+                        <span class="font-medium text-amber-700 dark:text-amber-400">3. วิชาวินัยบัญญัติ</span>
+                        <span id="vinayaStat" class="text-slate-500 dark:text-slate-400">0/14 (0%)</span>
+                    </div>
+                    <div class="w-full bg-slate-200 dark:bg-slate-600 h-1.5 rounded-full overflow-hidden">
+                        <div id="vinayaBar" class="bg-amber-500 h-full transition-all duration-300" style="width: 0%"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Search & Filter Bar -->
+        <div class="space-y-3 mb-6">
+            <!-- Tabs Navigation -->
+            <div class="flex space-x-1.5 overflow-x-auto pb-1 custom-scrollbar">
+                <button onclick="setTab('all')" id="tab-all" class="tab-btn px-4 py-2 rounded-xl font-medium text-sm whitespace-nowrap transition border border-transparent">
+                    ทั้งหมด (<span id="count-all">0</span>)
+                </button>
+                <button onclick="setTab('dhamma')" id="tab-dhamma" class="tab-btn px-4 py-2 rounded-xl font-medium text-sm whitespace-nowrap transition border border-transparent">
+                    วิชาธรรม
+                </button>
+                <button onclick="setTab('history')" id="tab-history" class="tab-btn px-4 py-2 rounded-xl font-medium text-sm whitespace-nowrap transition border border-transparent">
+                    วิชาพุทธประวัติ
+                </button>
+                <button onclick="setTab('vinaya')" id="tab-vinaya" class="tab-btn px-4 py-2 rounded-xl font-medium text-sm whitespace-nowrap transition border border-transparent">
+                    วิชาวินัยบัญญัติ
+                </button>
+                <button onclick="setTab('extra')" id="tab-extra" class="tab-btn px-4 py-2 rounded-xl font-medium text-sm whitespace-nowrap transition border border-transparent">
+                    ⭐ ข้อเพิ่มเติม
+                </button>
+            </div>
+
+            <!-- Search Input and Status Filter -->
+            <div class="flex flex-col sm:flex-row gap-2.5">
+                <!-- Search Box -->
+                <div class="relative flex-1">
+                    <svg class="w-4 h-4 text-slate-400 absolute left-3.5 top-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                    <input type="text" id="searchInput" oninput="handleSearch()" placeholder="ค้นหาข้อสอบ, คำถาม, หรือคำตอบ..." class="w-full pl-10 pr-9 py-2.5 text-sm bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-amber-500/50 dark:text-slate-100 placeholder-slate-400 shadow-sm transition">
+                    <button id="clearSearchBtn" onclick="clearSearch()" class="hidden absolute right-3 top-3 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                    </button>
+                </div>
+
+                <!-- Status Filter Buttons -->
+                <div class="flex items-center bg-white dark:bg-slate-800 p-1 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm text-xs font-medium self-start sm:self-auto w-full sm:w-auto">
+                    <button onclick="setStatusFilter('all')" id="filter-status-all" class="flex-1 sm:flex-none px-3 py-1.5 rounded-lg transition">ทั้งหมด</button>
+                    <button onclick="setStatusFilter('pending')" id="filter-status-pending" class="flex-1 sm:flex-none px-3 py-1.5 rounded-lg transition">ยังจำไม่ได้</button>
+                    <button onclick="setStatusFilter('done')" id="filter-status-done" class="flex-1 sm:flex-none px-3 py-1.5 rounded-lg transition">จำได้แล้ว</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Questions List Container -->
+        <div id="questionsContainer" class="space-y-3.5">
+            <!-- Dynamic Questions Inserted Here via JS -->
+        </div>
+
+        <!-- Empty State -->
+        <div id="emptyState" class="hidden text-center py-12 bg-white dark:bg-slate-800 rounded-2xl border border-dashed border-slate-300 dark:border-slate-700 p-6">
+            <svg class="w-12 h-12 text-slate-300 dark:text-slate-600 mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+            <h3 class="text-base font-semibold text-slate-700 dark:text-slate-200">ไม่พบรายการข้อสอบที่ค้นหา</h3>
+            <p class="text-xs text-slate-400 mt-1">ลองเปลี่ยนคำค้นหา หรือเลือกตัวกรองวิชาใหม่อีกครั้ง</p>
+            <button onclick="resetFilters()" class="mt-4 px-4 py-2 bg-amber-500 hover:bg-amber-600 text-white rounded-xl text-xs font-semibold transition">
+                ล้างตัวกรองทั้งหมด
+            </button>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="mt-12 py-8 bg-white dark:bg-slate-800 border-t border-slate-200/80 dark:border-slate-700/60 text-center text-xs text-slate-500 dark:text-slate-400">
+        <div class="max-w-5xl mx-auto px-4 space-y-2">
+            <p class="font-medium text-amber-700 dark:text-amber-400">คู่มือสรุปแนวข้อสอบเก็ง นักธรรมชั้นตรี</p>
+            <p>ออกแบบเพื่อให้สามารถทบทวนความรู้ สุ่มทดสอบความจำ และติดตามความก้าวหน้าได้ทุกที่ทุกเวลา</p>
+        </div>
+    </footer>
+
+    <!-- Interactive Flashcard / Quiz Modal -->
+    <div id="flashcardModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 opacity-0 pointer-events-none transition-opacity duration-300">
+        <div class="bg-white dark:bg-slate-800 w-full max-w-lg rounded-3xl shadow-2xl border border-slate-200 dark:border-slate-700 p-6 relative flex flex-col min-h-[420px]">
+            
+            <!-- Modal Header -->
+            <div class="flex items-center justify-between pb-3 border-b border-slate-100 dark:border-slate-700">
+                <div class="flex items-center space-x-2">
+                    <span id="fcSubjectTag" class="px-2.5 py-1 rounded-md bg-amber-100 dark:bg-amber-900/50 text-amber-800 dark:text-amber-300 text-xs font-semibold">
+                        วิชาธรรม
+                    </span>
+                    <span id="fcProgressCounter" class="text-xs text-slate-400 font-medium">ข้อที่ 1 / 10</span>
+                </div>
+                <button onclick="closeFlashcardModal()" class="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 p-1 rounded-lg">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                </button>
+            </div>
+
+            <!-- Flashcard Display Area -->
+            <div class="flex-1 my-4 flex flex-col justify-center">
+                <div id="fcCardContainer" onclick="toggleFlashcardAnswer()" class="w-full bg-slate-50 dark:bg-slate-700/40 border border-slate-200 dark:border-slate-600/80 rounded-2xl p-6 min-h-[220px] flex flex-col justify-between cursor-pointer hover:border-amber-400 dark:hover:border-amber-500 transition shadow-inner relative group">
+                    <div class="text-center my-auto">
+                        <span id="fcNumberText" class="text-xs font-bold text-amber-600 dark:text-amber-400 tracking-wider uppercase block mb-2">คำถาม</span>
+                        <h3 id="fcQuestionText" class="text-base sm:text-lg font-bold text-slate-800 dark:text-slate-100 leading-relaxed">
+                            ...
+                        </h3>
+                    </div>
+
+                    <!-- Answer Container (Hidden or Revealed) -->
+                    <div id="fcAnswerBox" class="hidden mt-4 pt-4 border-t border-dashed border-amber-300 dark:border-amber-600 text-slate-700 dark:text-slate-200 text-sm leading-relaxed text-center bg-amber-50/60 dark:bg-amber-950/30 p-3 rounded-xl">
+                        <span class="text-xs font-bold text-amber-700 dark:text-amber-300 block mb-1">เฉลยคำตอบ:</span>
+                        <div id="fcAnswerText" class="font-medium">...</div>
+                    </div>
+
+                    <div class="text-center mt-3">
+                        <span id="fcClickPrompt" class="text-[11px] text-amber-600 dark:text-amber-400 font-semibold bg-amber-100/80 dark:bg-amber-900/40 px-3 py-1 rounded-full">
+                            👆 แตะการ์ดเพื่อเปิดเฉลย
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal Bottom Actions -->
+            <div class="flex items-center gap-3 pt-2">
+                <button onclick="markCurrentFlashcard(false)" class="flex-1 py-2.5 px-3 rounded-xl border border-slate-300 dark:border-slate-600 text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 text-xs font-semibold transition">
+                    ❌ ยังจำไม่ได้
+                </button>
+                <button onclick="markCurrentFlashcard(true)" class="flex-1 py-2.5 px-3 rounded-xl bg-amber-500 hover:bg-amber-600 text-white text-xs font-semibold shadow-sm transition">
+                    ✅ จำได้แล้ว
+                </button>
+            </div>
+            
+            <div class="flex justify-between items-center mt-3 pt-2 text-xs text-slate-400">
+                <button onclick="prevFlashcard()" class="hover:text-amber-600 flex items-center gap-1">
+                    ← ข้อก่อนหน้า
+                </button>
+                <button onclick="nextFlashcard()" class="hover:text-amber-600 flex items-center gap-1">
+                    ข้อถัดไป →
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Confirm Reset Modal -->
+    <div id="resetModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 opacity-0 pointer-events-none transition-opacity duration-300">
+        <div class="bg-white dark:bg-slate-800 max-w-sm w-full rounded-2xl p-6 text-center shadow-xl border border-slate-200 dark:border-slate-700">
+            <div class="w-12 h-12 rounded-full bg-red-100 dark:bg-red-900/40 text-red-600 dark:text-red-400 flex items-center justify-center mx-auto mb-3">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+            </div>
+            <h3 class="text-base font-bold text-slate-800 dark:text-slate-100">ยืนยันการล้างสถิติ?</h3>
+            <p class="text-xs text-slate-500 dark:text-slate-400 mt-2">เครื่องหมายถูกและสถิติข้อสอบที่บันทึกไว้จะถูกลบทั้งหมด</p>
+            <div class="flex gap-2 mt-5">
+                <button onclick="closeResetModal()" class="flex-1 py-2 rounded-xl border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 text-xs font-semibold">ยกเลิก</button>
+                <button onclick="executeResetProgress()" class="flex-1 py-2 rounded-xl bg-red-600 hover:bg-red-700 text-white text-xs font-semibold shadow-sm">ยืนยันล้างข้อมูล</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Application Script -->
+    <script>
+        // Database of Exam Questions
+        const questionsData = [
+            // 1. วิชาธรรม (Main 10)
+            { id: 'd1', subject: 'dhamma', subjectName: 'วิชาธรรม', type: 'main', num: 1, q: 'สติ และ สัมปชัญญะ แปลว่าอะไร ? และพึงใช้ในเวลาใด ?', a: 'สติ แปลว่า ความระลึกได้ ใช้ก่อนทำ; สัมปชัญญะ แปลว่า ความรู้ตัว ใช้ในขณะทำ' },
+            { id: 'd2', subject: 'dhamma', subjectName: 'วิชาธรรม', type: 'main', num: 2, q: 'บุคคลประเภทใดที่พระพุทธศาสนาสอนว่าหาได้ยากในโลกนี้ ?', a: '1. บุพพการี บุคคลผู้ทำอุปการะก่อน\n2. กตัญญูกตเวที บุคคลผู้รู้อุปการะที่ท่านทำแล้ว และทำตอบแทนท่าน' },
+            { id: 'd3', subject: 'dhamma', subjectName: 'วิชาธรรม', type: 'main', num: 3, q: 'คุณธรรมที่เป็นเครื่องอยู่ของท่านผู้ใหญ่ (พรหมวิหาร 4) มีอะไรบ้าง ?', a: '1. เมตตา (ปรารถนาให้เป็นสุข)\n2. กรุณา (คิดช่วยให้พ้นทุกข์)\n3. มุทิตา (พลอยยินดีเมื่อผู้อื่นได้ดี)\n4. อุเบกขา (วางเฉยเมื่อถึงความวิบัติ)' },
+            { id: 'd4', subject: 'dhamma', subjectName: 'วิชาธรรม', type: 'main', num: 4, q: 'อนันตริยกรรม 5 คืออะไร ? จงยกตัวอย่างมา 3 ข้อ', a: 'กรรมที่เป็นบาปหนักที่สุด ได้แก่ 1. มาตุฆาต (ฆ่าแม่) 2. ปิตุฆาต (ฆ่าพ่อ) 3. อรหันตฆาต (ฆ่าพระอรหันต์) 4. โลหิตุปบาท (ทำร้ายพระพุทธเจ้าจนห้อพระโลหิต) 5. สังฆเภท (ทำสงฆ์ให้แตกกัน)' },
+            { id: 'd5', subject: 'dhamma', subjectName: 'วิชาธรรม', type: 'main', num: 5, q: 'ความเพียร 4 อย่าง (ปธาน 4) มีอะไรบ้าง ?', a: '1. สังวรปธาน (เพียรระวังไม่ให้บาปเกิดขึ้น)\n2. ปหานปธาน (เพียรละบาปที่เกิดขึ้นแล้ว)\n3. ภาวนาปธาน (เพียรให้กุศลเกิดขึ้น)\n4. อนุรักขนาปธาน (เพียรรักษากุศลไว้มิให้เสื่อม)' },
+            { id: 'd6', subject: 'dhamma', subjectName: 'วิชาธรรม', type: 'main', num: 6, q: 'อริยสัจ 4 มีอะไรบ้าง ? ความไม่สบายกายไม่สบายใจจัดเป็นอริยสัจข้อไหน ?', a: 'มี ทุกข์, สมุทัย, นิโรธ, มรรค; ความไม่สบายกายไม่สบายใจจัดเป็น ทุกข์' },
+            { id: 'd7', subject: 'dhamma', subjectName: 'วิชาธรรม', type: 'main', num: 7, q: 'ประโยชน์ปัจจุบัน (ทิฏฐธัมมิกัตถประโยชน์ 4) มีอะไรบ้าง ?', a: '1. อุฏฐานสัมปทา (ขยันหา)\n2. อารักขสัมปทา (รักษาดี)\n3. กัลยาณมิตตตา (คบเพื่อนดี)\n4. สมชีวิตา (ใช้ชีวิตพอเหมาะ)' },
+            { id: 'd8', subject: 'dhamma', subjectName: 'วิชาธรรม', type: 'main', num: 8, q: 'ศีลที่คฤหัสถ์ควรรักษาเป็นนิตย์ คือศีลอะไร ? ได้แก่อะไรบ้าง ?', a: 'ศีล 5 ได้แก่ เว้นจากทำชีวิตสัตว์ให้ตกล่วงไป, เว้นจากถือเอาสิ่งของที่เจ้าของไม่ได้ให้, เว้นจากประพฤติผิดในกาม, เว้นจากพูดเท็จ, เว้นจากดื่มน้ำเมา' },
+            { id: 'd9', subject: 'dhamma', subjectName: 'วิชาธรรม', type: 'main', num: 9, q: 'โทษของการดื่มน้ำเมามีกี่อย่าง ? อะไรบ้าง ?', a: 'มี 6 อย่าง คือ 1. เสียทรัพย์ 2. ก่อการทะเลาะวิวาท 3. เกิดโรค 4. ถูกติเตียน 5. ไม่รู้จักอาย 6. ทอนกำลังปัญญา' },
+            { id: 'd10', subject: 'dhamma', subjectName: 'วิชาธรรม', type: 'main', num: 10, q: 'บุตรธิดาพึงปฏิบัติต่อมารดาบิดาอย่างไร ?', a: '1. ท่านเลี้ยงมาแล้ว เลี้ยงท่านตอบ\n2. ทำกิจของท่าน\n3. ดำรงวงศ์สกุล\n4. ประพฤติตนให้ควรรับมรดก\n5. เมื่อท่านล่วงลับ ทำบุญอุทิศให้ท่าน' },
+
+            // วิชาธรรม (Extra 4)
+            { id: 'de1', subject: 'dhamma', subjectName: 'วิชาธรรม', type: 'extra', num: 'ข้อเพิ่มเติม', q: 'หิริ & โอตตัปปะ คืออะไร ?', a: 'หิริ คือ ความละอายต่อบาป; โอตตัปปะ คือ ความเกรงกลัวต่อบาป' },
+            { id: 'de2', subject: 'dhamma', subjectName: 'วิชาธรรม', type: 'extra', num: 'ข้อเพิ่มเติม', q: 'บุญกิริยาวัตถุ 3 ได้แก่อะไรบ้าง ?', a: 'ทานมัย (ทำบุญด้วยการให้), สีลมัย (ทำบุญด้วยการรักษาศีล), ภาวนามัย (ทำบุญด้วยการเจริญภาวนา)' },
+            { id: 'de3', subject: 'dhamma', subjectName: 'วิชาธรรม', type: 'extra', num: 'ข้อเพิ่มเติม', q: 'ทุจริต 3 ได้แก่อะไรบ้าง ?', a: 'กายทุจริต (ประพฤติชั่วทางกาย), วจีทุจริต (พูดใส่ร้าย/พูดชั่ว), มโนทุจริต (คิดเห็นผิด/คิดชั่ว)' },
+            { id: 'de4', subject: 'dhamma', subjectName: 'วิชาธรรม', type: 'extra', num: 'ข้อเพิ่มเติม', q: 'หน้าที่ศิษย์พึงปฏิบัติต่อครูอาจารย์มีอย่างไรบ้าง ?', a: 'ลุกยืนรับ, เข้าไปยืนคอยรับใช้, เชื่อฟัง, อุปัฏฐาก, เรียนศิลปวิทยาโดยเคารพ' },
+
+            // 2. วิชาพุทธประวัติ (Main 10)
+            { id: 'h1', subject: 'history', subjectName: 'วิชาพุทธประวัติ', type: 'main', num: 1, q: 'คนในชมพูทวีปแบ่งออกเป็นกี่วรรณะ ? อะไรบ้าง ?', a: 'แบ่งเป็น 4 วรรณะ คือ กษัตริย์, พราหมณ์, แพศย์, ศูทร' },
+            { id: 'h2', subject: 'history', subjectName: 'วิชาพุทธประวัติ', type: 'main', num: 2, q: 'เจ้าชายสิทธัตถะทรงปรารภอะไรจึงเสด็จออกบรรพชา ? บวชกี่ปีจึงตรัสรู้ ?', a: 'ทรงปรารภเทวทูต 4 (แก่, เจ็บ, ตาย, สมณะ); บรรพชาได้ 6 ปี จึงตรัสรู้' },
+            { id: 'h3', subject: 'history', subjectName: 'วิชาพุทธประวัติ', type: 'main', num: 3, q: 'ใครถวายบิณฑบาตแด่พระพุทธองค์ก่อนตรัสรู้ และก่อนปรินิพพาน ?', a: 'ก่อนตรัสรู้ คือ นางสุชาดา; ก่อนปรินิพพาน คือ นายจุนทกัมมารบุตร' },
+            { id: 'h4', subject: 'history', subjectName: 'วิชาพุทธประวัติ', type: 'main', num: 4, q: 'เทศนากัณฑ์แรก ชื่ออะไร ? ทรงแสดงแก่ใคร ?', a: 'ชื่อ ธัมมจักกัปปวัตตนสูตร; แสดงแก่ พระปัญจวัคคีย์' },
+            { id: 'h5', subject: 'history', subjectName: 'วิชาพุทธประวัติ', type: 'main', num: 5, q: 'ปฐมสาวก และ ปัจฉิมสาวก คือใคร ?', a: 'ปฐมสาวก คือ พระอัญญาโกณฑัญญะ; ปัจฉิมสาวก คือ พระสุภัททะ' },
+            { id: 'h6', subject: 'history', subjectName: 'วิชาพุทธประวัติ', type: 'main', num: 6, q: 'ฆราวาสที่บรรลุพระอรหัตผลคนแรกคือใคร ? เพราะฟังธรรมอะไร ?', a: 'คือ ยสกุลบุตร; เพราะฟัง อนุปุพพีกถา และ อริยสัจ 4' },
+            { id: 'h7', subject: 'history', subjectName: 'วิชาพุทธประวัติ', type: 'main', num: 7, q: 'สังเวชนียสถาน 4 ตำบล คือสถานที่ใดบ้าง ?', a: 'สถานที่ประสูติ, สถานที่ตรัสรู้, สถานที่แสดงปฐมเทศนา, และสถานที่ปรินิพพาน' },
+            { id: 'h8', subject: 'history', subjectName: 'วิชาพุทธประวัติ', type: 'main', num: 8, q: 'ศาสนพิธี คืออะไร ? ผู้ที่ได้เรียนรู้แล้วได้รับประโยชน์อย่างไรบ้าง ?', a: 'คือแบบแผนปฏิบัติในทางศาสนา; ได้ประโยชน์คือ ฉลาดในพิธีกรรม จัดได้ถูกต้อง และรักษาประเพณี' },
+            { id: 'h9', subject: 'history', subjectName: 'วิชาพุทธประวัติ', type: 'main', num: 9, q: 'วันสำคัญทางพระพุทธศาสนากำหนดไว้กี่วัน ? คือวันอะไรบ้าง ?', a: '4 วัน คือ วันมาฆบูชา, วันวิสาขบูชา, วันอัฏฐมีบูชา, และวันอาสาฬหบูชา' },
+            { id: 'h10', subject: 'history', subjectName: 'วิชาพุทธประวัติ', type: 'main', num: 10, q: 'ปาฏิบุคลิกทาน และ สังฆทาน ต่างกันอย่างไร ?', a: 'ปาฏิบุคลิกทาน คือ ถวายเจาะจงภิกษุรูปใดรูปหนึ่ง; สังฆทาน คือ ถวายเป็นของกลางให้สงฆ์' },
+
+            // วิชาพุทธประวัติ (Extra 4)
+            { id: 'he1', subject: 'history', subjectName: 'วิชาพุทธประวัติ', type: 'extra', num: 'ข้อเพิ่มเติม', q: 'การประสูติของเจ้าชายสิทธัตถะ เกิดขึ้นที่ไหน เมื่อใด ?', a: 'ประสูติ ณ ลุมพินีวัน ในวันเพ็ญเดือน 6 ก่อนพุทธศักราช 80 ปี' },
+            { id: 'he2', subject: 'history', subjectName: 'วิชาพุทธประวัติ', type: 'extra', num: 'ข้อเพิ่มเติม', q: 'พระอัครสาวกทั้งสองสำเร็จเป็นพระโสดาบันเพราะฟังธรรมจากใคร ?', a: 'พระสารีบุตรฟังธรรมจากพระอัสสชิ; พระโมคคัลลานะฟังธรรมจากพระสารีบุตร' },
+            { id: 'he3', subject: 'history', subjectName: 'วิชาพุทธประวัติ', type: 'extra', num: 'ข้อเพิ่มเติม', q: 'พุทธมามกะ หมายถึงอะไร ?', a: 'ผู้ประกาศตนว่าเป็นผู้นับถือพระพุทธศาสนา หรือยอมรับพระพุทธเจ้าเป็นที่พึ่ง' },
+            { id: 'he4', subject: 'history', subjectName: 'วิชาพุทธประวัติ', type: 'extra', num: 'ข้อเพิ่มเติม', q: 'การแสดงความเคารพพระสงฆ์มีกี่วิธี ? ได้แก่อะไรบ้าง ?', a: '3 วิธี คือ ประนมมือ (อัญชลี), ไหว้ (นมัสการ), และกราบ (อภิวาท)' },
+
+            // 3. วิชาวินัยบัญญัติ (Main 10)
+            { id: 'v1', subject: 'vinaya', subjectName: 'วิชาวินัยบัญญัติ', type: 'main', num: 1, q: 'พระวินัย คืออะไร ? ภิกษุรักษาพระวินัยดีแล้ว ย่อมได้อานิสงส์อะไร ?', a: 'คือ พระพุทธบัญญัติและอภิสมาจาร; ได้อานิสงส์คือ ไม่ต้องเดือดร้อนใจ เกิดความแช่มชื่น องอาจเมื่อเข้าหมู่สงฆ์' },
+            { id: 'v2', subject: 'vinaya', subjectName: 'วิชาวินัยบัญญัติ', type: 'main', num: 2, q: 'ปัจจัยเครื่องอาศัยของบรรพชิต (นิสัย 4) มีอะไรบ้าง ?', a: '1. เที่ยวบิณฑบาต\n2. นุ่งห่มผ้าบังสุกุล\n3. อยู่โคนต้นไม้\n4. ฉันยาดองด้วยน้ำมูตรเน่า' },
+            { id: 'v3', subject: 'vinaya', subjectName: 'วิชาวินัยบัญญัติ', type: 'main', num: 3, q: 'สิกขา คืออะไร ? มีอะไรบ้าง ?', a: 'คือ ข้อที่ภิกษุต้องศึกษา มี 1. ศีล (อบรมกายวาจา) 2. สมาธิ (อบรมใจมั่น) 3. ปัญญา (รอบรู้ในสังขาร)' },
+            { id: 'v4', subject: 'vinaya', subjectName: 'วิชาวินัยบัญญัติ', type: 'main', num: 4, q: 'ภิกษุฆ่ามนุษย์ และฆ่าสัตว์เดียรัจฉาน ต้องอาบัติอะไร ?', a: 'ฆ่ามนุษย์ ต้องอาบัติ ปาราชิก; ฆ่าสัตว์เดียรัจฉาน ต้องอาบัติ ปาจิตตีย์' },
+            { id: 'v5', subject: 'vinaya', subjectName: 'วิชาวินัยบัญญัติ', type: 'main', num: 5, q: 'พูดอย่างไรเรียกว่า อวดอุตตริมนุสสธรรม ?', a: 'พูดอวดคุณพิเศษอันยิ่งของมนุษย์ที่ไม่มีในตน เช่น ฌาน สมาบัติ มรรค ผล นิพพาน' },
+            { id: 'v6', subject: 'vinaya', subjectName: 'วิชาวินัยบัญญัติ', type: 'main', num: 6, q: 'คำว่า "ภิกษุประทุษร้ายตระกูล" (กุลทูสกะ) หมายถึงการทำอย่างไร ?', a: 'หมายถึง ประจบคฤหัสถ์ ยอมตนให้เขาใช้สอย หรือให้สิ่งของเล็กน้อยด้วยหวังได้ทรัพย์มาก' },
+            { id: 'v7', subject: 'vinaya', subjectName: 'วิชาวินัยบัญญัติ', type: 'main', num: 7, q: 'ผ้าไตรจีวร มีอะไรบ้าง ?', a: '1. สังฆาฏิ (ผ้าซ้อน/ผ้าคลุม)\n2. อุตตราสงค์ (ผ้าห่ม)\n3. อันตรวาสก (ผ้านุ่ง)' },
+            { id: 'v8', subject: 'vinaya', subjectName: 'วิชาวินัยบัญญัติ', type: 'main', num: 8, q: 'เภสัช 5 ได้แก่อะไรบ้าง ? น้ำตาลทรายจัดเข้าในเภสัชใด ?', a: 'ได้แก่ เนยใส, เนยข้น, น้ำมัน, น้ำผึ้ง, น้ำอ้อย; น้ำตาลทรายจัดเป็น น้ำอ้อย' },
+            { id: 'v9', subject: 'vinaya', subjectName: 'วิชาวินัยบัญญัติ', type: 'main', num: 9, q: 'การรับบิณฑบาต ภิกษุสามเณรพึงปฏิบัติอย่างไรตามเสขิยวัตร ?', a: 'รับโดยเคารพ, แลดูแต่ในบาตร, รับแกงพอสมควร, รับพอเสมอขอบปากบาตร' },
+            { id: 'v10', subject: 'vinaya', subjectName: 'วิชาวินัยบัญญัติ', type: 'main', num: 10, q: 'วิวาทาธิกรณ์ และ อนุวาทาธิกรณ์ ต่างกันอย่างไร ?', a: 'วิวาทาธิกรณ์ คือ เถียงกันเรื่องพระธรรมวินัย; อนุวาทาธิกรณ์ คือ โจทหรือฟ้องร้องกันด้วยอาบัติ' },
+
+            // วิชาวินัยบัญญัติ (Extra 4)
+            { id: 've1', subject: 'vinaya', subjectName: 'วิชาวินัยบัญญัติ', type: 'extra', num: 'ข้อเพิ่มเติม', q: 'โลกวัชชะ กับ ปัณณัตติวัชชะ ต่างกันอย่างไร ?', a: 'โลกวัชชะ คือ ความผิดที่ชาวโลกติเตียน คนธรรมดาทำก็ผิด; ปัณณัตติวัชชะ คือ ความผิดเฉพาะพระภิกษุตามพระพุทธบัญญัติ' },
+            { id: 've2', subject: 'vinaya', subjectName: 'วิชาวินัยบัญญัติ', type: 'extra', num: 'ข้อเพิ่มเติม', q: 'การนุ่งผ้าให้เป็นปริมณฑล หมายถึงอะไร ?', a: 'นุ่งให้เรียบร้อย ปิดสะดือลงไปถึงครึ่งแข้ง' },
+            { id: 've3', subject: 'vinaya', subjectName: 'วิชาวินัยบัญญัติ', type: 'extra', num: 'ข้อเพิ่มเติม', q: 'ภิกษุเข้าไปในบ้านในเวลาวิกาล โดยไม่บอกลาภิกษุอื่น ต้องอาบัติอะไร ?', a: 'ต้องอาบัติปาจิตตีย์' },
+            { id: 've4', subject: 'vinaya', subjectName: 'วิชาวินัยบัญญัติ', type: 'extra', num: 'ข้อเพิ่มเติม', q: 'การนั่งในบ้านตามเสขิยวัตร มีข้อห้ามสำคัญอย่างไร ?', a: 'ต้องนั่งให้เรียบร้อย ไม่เอามือค้ำกาย (ไม่เท้าแขน)' }
+        ];
+
+        // App States
+        let completedIds = new Set(JSON.parse(localStorage.getItem('dhammadatri_completed') || '[]'));
+        let revealedAnswers = new Set();
+        let currentTab = 'all'; // 'all', 'dhamma', 'history', 'vinaya', 'extra'
+        let statusFilter = 'all'; // 'all', 'pending', 'done'
+        let searchQuery = '';
+        let globalHideAnswers = false;
+
+        // Flashcard Quiz States
+        let fcActiveList = [];
+        let fcIndex = 0;
+        let fcAnswerRevealed = false;
+
+        // Initialize App on DOM Load
+        document.addEventListener('DOMContentLoaded', () => {
+            initTheme();
+            updateStats();
+            renderTabCounts();
+            renderQuestions();
+        });
+
+        // Theme Toggle Handler
+        function initTheme() {
+            if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                document.documentElement.classList.add('dark');
+                document.getElementById('sunIcon').classList.remove('hidden');
+                document.getElementById('moonIcon').classList.add('hidden');
+            } else {
+                document.documentElement.classList.remove('dark');
+                document.getElementById('sunIcon').classList.add('hidden');
+                document.getElementById('moonIcon').classList.remove('hidden');
+            }
+        }
+
+        function toggleTheme() {
+            if (document.documentElement.classList.contains('dark')) {
+                document.documentElement.classList.remove('dark');
+                localStorage.setItem('theme', 'light');
+                document.getElementById('sunIcon').classList.add('hidden');
+                document.getElementById('moonIcon').classList.remove('hidden');
+            } else {
+                document.documentElement.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
+                document.getElementById('sunIcon').classList.remove('hidden');
+                document.getElementById('moonIcon').classList.add('hidden');
+            }
+        }
+
+        // Save progress to LocalStorage
+        function saveProgress() {
+            localStorage.setItem('dhammadatri_completed', JSON.stringify(Array.from(completedIds)));
+            updateStats();
+        }
+
+        // Calculate and Update Statistics
+        function updateStats() {
+            const total = questionsData.length;
+            const doneTotal = completedIds.size;
+            const overallPercent = Math.round((doneTotal / total) * 100) || 0;
+
+            document.getElementById('overallPercentBadge').innerText = `${overallPercent}%`;
+            document.getElementById('overallProgressBar').style.width = `${overallPercent}%`;
+
+            // Subject Breakdown
+            const dhammaList = questionsData.filter(q => q.subject === 'dhamma');
+            const historyList = questionsData.filter(q => q.subject === 'history');
+            const vinayaList = questionsData.filter(q => q.subject === 'vinaya');
+
+            const dhammaDone = dhammaList.filter(q => completedIds.has(q.id)).length;
+            const historyDone = historyList.filter(q => completedIds.has(q.id)).length;
+            const vinayaDone = vinayaList.filter(q => completedIds.has(q.id)).length;
+
+            const dPct = Math.round((dhammaDone / dhammaList.length) * 100) || 0;
+            const hPct = Math.round((historyDone / historyList.length) * 100) || 0;
+            const vPct = Math.round((vinayaDone / vinayaList.length) * 100) || 0;
+
+            document.getElementById('dhammaStat').innerText = `${dhammaDone}/${dhammaList.length} (${dPct}%)`;
+            document.getElementById('dhammaBar').style.width = `${dPct}%`;
+
+            document.getElementById('historyStat').innerText = `${historyDone}/${historyList.length} (${hPct}%)`;
+            document.getElementById('historyBar').style.width = `${hPct}%`;
+
+            document.getElementById('vinayaStat').innerText = `${vinayaDone}/${vinayaList.length} (${vPct}%)`;
+            document.getElementById('vinayaBar').style.width = `${vPct}%`;
+        }
+
+        // Render Tab Badge Counts
+        function renderTabCounts() {
+            document.getElementById('count-all').innerText = questionsData.length;
+            updateTabStyles();
+        }
+
+        function updateTabStyles() {
+            const tabs = ['all', 'dhamma', 'history', 'vinaya', 'extra'];
+            tabs.forEach(t => {
+                const btn = document.getElementById(`tab-${t}`);
+                if (t === currentTab) {
+                    btn.className = "tab-btn px-4 py-2 rounded-xl font-bold text-sm whitespace-nowrap transition bg-amber-500 text-white shadow-sm";
+                } else {
+                    btn.className = "tab-btn px-4 py-2 rounded-xl font-medium text-sm whitespace-nowrap transition bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-amber-50 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700";
+                }
+            });
+
+            const statuses = ['all', 'pending', 'done'];
+            statuses.forEach(s => {
+                const btn = document.getElementById(`filter-status-${s}`);
+                if (s === statusFilter) {
+                    btn.className = "flex-1 sm:flex-none px-3 py-1.5 rounded-lg transition bg-amber-500 text-white font-semibold shadow-xs";
+                } else {
+                    btn.className = "flex-1 sm:flex-none px-3 py-1.5 rounded-lg transition text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200";
+                }
+            });
+        }
+
+        // Set Active Subject Tab
+        function setTab(tab) {
+            currentTab = tab;
+            updateTabStyles();
+            renderQuestions();
+        }
+
+        // Set Status Filter (All / Pending / Done)
+        function setStatusFilter(status) {
+            statusFilter = status;
+            updateTabStyles();
+            renderQuestions();
+        }
+
+        // Search Handlers
+        function handleSearch() {
+            const val = document.getElementById('searchInput').value.trim();
+            searchQuery = val.toLowerCase();
+            const clearBtn = document.getElementById('clearSearchBtn');
+            if (val.length > 0) {
+                clearBtn.classList.remove('hidden');
+            } else {
+                clearBtn.classList.add('hidden');
+            }
+            renderQuestions();
+        }
+
+        function clearSearch() {
+            document.getElementById('searchInput').value = '';
+            searchQuery = '';
+            document.getElementById('clearSearchBtn').classList.add('hidden');
+            renderQuestions();
+        }
+
+        function resetFilters() {
+            currentTab = 'all';
+            statusFilter = 'all';
+            searchQuery = '';
+            document.getElementById('searchInput').value = '';
+            document.getElementById('clearSearchBtn').classList.add('hidden');
+            updateTabStyles();
+            renderQuestions();
+        }
+
+        // Toggle Mark Completed for Single Question
+        function toggleCheck(id) {
+            if (completedIds.has(id)) {
+                completedIds.delete(id);
+            } else {
+                completedIds.add(id);
+            }
+            saveProgress();
+            renderQuestions();
+        }
+
+        // Individual Card Reveal Answer
+        function toggleSingleAnswer(id) {
+            if (revealedAnswers.has(id)) {
+                revealedAnswers.delete(id);
+            } else {
+                revealedAnswers.add(id);
+            }
+            renderQuestions();
+        }
+
+        // Global Hide/Show All Answers
+        function toggleAllAnswers() {
+            globalHideAnswers = !globalHideAnswers;
+            const btnText = document.getElementById('toggleAnswersText');
+            if (globalHideAnswers) {
+                revealedAnswers.clear();
+                btnText.innerText = "เปิดเฉลยทั้งหมด";
+            } else {
+                questionsData.forEach(q => revealedAnswers.add(q.id));
+                btnText.innerText = "ซ่อนเฉลยทั้งหมด";
+            }
+            renderQuestions();
+        }
+
+        // Main Questions Renderer
+        function renderQuestions() {
+            const container = document.getElementById('questionsContainer');
+            const emptyState = document.getElementById('emptyState');
+
+            // Filter logic
+            let filtered = questionsData.filter(q => {
+                // Tab filter
+                if (currentTab === 'dhamma' && q.subject !== 'dhamma') return false;
+                if (currentTab === 'history' && q.subject !== 'history') return false;
+                if (currentTab === 'vinaya' && q.subject !== 'vinaya') return false;
+                if (currentTab === 'extra' && q.type !== 'extra') return false;
+
+                // Status filter
+                const isDone = completedIds.has(q.id);
+                if (statusFilter === 'done' && !isDone) return false;
+                if (statusFilter === 'pending' && isDone) return false;
+
+                // Search query
+                if (searchQuery) {
+                    const matchQ = q.q.toLowerCase().includes(searchQuery);
+                    const matchA = q.a.toLowerCase().includes(searchQuery);
+                    const matchNum = String(q.num).includes(searchQuery);
+                    if (!matchQ && !matchA && !matchNum) return false;
+                }
+
+                return true;
+            });
+
+            if (filtered.length === 0) {
+                container.innerHTML = '';
+                emptyState.classList.remove('hidden');
+                return;
+            } else {
+                emptyState.classList.add('hidden');
+            }
+
+            // Render Cards HTML
+            let html = '';
+            filtered.forEach(q => {
+                const isDone = completedIds.has(q.id);
+                const isAnswerVisible = !globalHideAnswers || revealedAnswers.has(q.id);
+
+                // Badge Colors
+                let subjectBadgeClass = "bg-amber-100 text-amber-800 dark:bg-amber-900/40 dark:text-amber-300";
+                if (q.subject === 'history') subjectBadgeClass = "bg-orange-100 text-orange-800 dark:bg-orange-900/40 dark:text-orange-300";
+                if (q.subject === 'vinaya') subjectBadgeClass = "bg-yellow-100 text-yellow-800 dark:bg-yellow-900/40 dark:text-yellow-300";
+
+                const cardBg = isDone 
+                    ? "bg-slate-100/80 dark:bg-slate-800/50 border-slate-200 dark:border-slate-700/60 opacity-75" 
+                    : "bg-white dark:bg-slate-800 border-slate-200/90 dark:border-slate-700 shadow-xs hover:shadow-md";
+
+                html += `
+                <div class="card p-4 sm:p-5 rounded-2xl border transition-all duration-200 ${cardBg}" id="card-${q.id}">
+                    <div class="flex items-start gap-3">
+                        
+                        <!-- Checkbox Button -->
+                        <button onclick="toggleCheck('${q.id}')" class="mt-0.5 shrink-0 w-6 h-6 rounded-lg border-2 flex items-center justify-center transition-all ${isDone ? 'bg-amber-500 border-amber-500 text-white' : 'border-slate-300 dark:border-slate-600 hover:border-amber-500'}" title="${isDone ? 'ทำแล้ว (คลิกเพื่อยกเลิก)' : 'ยังไม่ได้ทำ (คลิกเมื่อจำได้แล้ว)'}">
+                            ${isDone ? '<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>' : ''}
+                        </button>
+
+                        <!-- Question & Answer Area -->
+                        <div class="flex-1 min-w-0">
+                            
+                            <!-- Question Header Meta -->
+                            <div class="flex flex-wrap items-center gap-2 mb-2">
+                                <span class="text-xs font-semibold px-2 py-0.5 rounded-md ${subjectBadgeClass}">
+                                    ${q.subjectName}
+                                </span>
+                                <span class="text-xs font-bold px-2 py-0.5 rounded-md bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300">
+                                    ${q.type === 'extra' ? '⭐ ' + q.num : 'ข้อ ' + q.num}
+                                </span>
+                            </div>
+
+                            <!-- Question Title -->
+                            <h3 class="text-base font-bold leading-snug text-slate-800 dark:text-slate-100 ${isDone ? 'line-through text-slate-500 dark:text-slate-400' : ''}">
+                                ${highlightSearch(q.q)}
+                            </h3>
+
+                            <!-- Answer Box -->
+                            <div class="mt-3 ${isAnswerVisible ? 'block' : 'hidden'} transition-all">
+                                <div class="bg-amber-50/70 dark:bg-amber-950/20 border-l-4 border-amber-500 p-3.5 rounded-r-xl text-slate-700 dark:text-slate-200 text-sm leading-relaxed whitespace-pre-line">
+                                    <span class="font-bold text-amber-800 dark:text-amber-400 block mb-0.5">ตอบ:</span>
+                                    ${highlightSearch(q.a)}
+                                </div>
+                            </div>
+
+                            <!-- Card Bottom Controls -->
+                            <div class="mt-3 flex items-center justify-between text-xs pt-1">
+                                <button onclick="toggleSingleAnswer('${q.id}')" class="text-amber-600 dark:text-amber-400 hover:text-amber-700 font-semibold flex items-center space-x-1">
+                                    <span>${isAnswerVisible ? '🙈 ซ่อนเฉลย' : '👁️ แสดงเฉลย'}</span>
+                                </button>
+
+                                <button onclick="openSingleFlashcard('${q.id}')" class="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 flex items-center space-x-1">
+                                    <span>🎴 ดูการ์ดคำถาม</span>
+                                </button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                `;
+            });
+
+            container.innerHTML = html;
+        }
+
+        // Highlight matched search string
+        function highlightSearch(text) {
+            if (!searchQuery) return text;
+            const regex = new RegExp(`(${escapeRegExp(searchQuery)})`, 'gi');
+            return text.replace(regex, '<mark class="bg-amber-200 dark:bg-amber-800/80 text-slate-900 dark:text-slate-100 rounded px-0.5">$1</mark>');
+        }
+
+        function escapeRegExp(string) {
+            return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        }
+
+        // --- Flashcard Modal Functions ---
+        function openFlashcardModal() {
+            // Get current active questions according to subject tab
+            fcActiveList = questionsData.filter(q => {
+                if (currentTab === 'dhamma') return q.subject === 'dhamma';
+                if (currentTab === 'history') return q.subject === 'history';
+                if (currentTab === 'vinaya') return q.subject === 'vinaya';
+                if (currentTab === 'extra') return q.type === 'extra';
+                return true;
+            });
+
+            // Shuffle cards for dynamic practice
+            fcActiveList = [...fcActiveList].sort(() => Math.random() - 0.5);
+            fcIndex = 0;
+            fcAnswerRevealed = false;
+
+            updateFlashcardView();
+
+            const modal = document.getElementById('flashcardModal');
+            modal.classList.remove('opacity-0', 'pointer-events-none');
+            modal.classList.add('opacity-100');
+        }
+
+        function openSingleFlashcard(id) {
+            const item = questionsData.find(q => q.id === id);
+            if (!item) return;
+            fcActiveList = [item];
+            fcIndex = 0;
+            fcAnswerRevealed = false;
+
+            updateFlashcardView();
+
+            const modal = document.getElementById('flashcardModal');
+            modal.classList.remove('opacity-0', 'pointer-events-none');
+            modal.classList.add('opacity-100');
+        }
+
+        function closeFlashcardModal() {
+            const modal = document.getElementById('flashcardModal');
+            modal.classList.remove('opacity-100');
+            modal.classList.add('opacity-0', 'pointer-events-none');
+        }
+
+        function updateFlashcardView() {
+            if (fcActiveList.length === 0) return;
+            const curr = fcActiveList[fcIndex];
+
+            document.getElementById('fcSubjectTag').innerText = curr.subjectName;
+            document.getElementById('fcProgressCounter').innerText = `ข้อที่ ${fcIndex + 1} / ${fcActiveList.length}`;
+            document.getElementById('fcNumberText').innerText = curr.type === 'extra' ? '⭐ ข้อเพิ่มเติม' : `ข้อ ${curr.num}`;
+            document.getElementById('fcQuestionText').innerText = curr.q;
+            document.getElementById('fcAnswerText').innerText = curr.a;
+
+            const ansBox = document.getElementById('fcAnswerBox');
+            const clickPrompt = document.getElementById('fcClickPrompt');
+
+            if (fcAnswerRevealed) {
+                ansBox.classList.remove('hidden');
+                clickPrompt.innerText = "🙈 แตะการ์ดเพื่อซ่อนเฉลย";
+            } else {
+                ansBox.classList.add('hidden');
+                clickPrompt.innerText = "👆 แตะการ์ดเพื่อเปิดเฉลย";
+            }
+        }
+
+        function toggleFlashcardAnswer() {
+            fcAnswerRevealed = !fcAnswerRevealed;
+            updateFlashcardView();
+        }
+
+        function nextFlashcard() {
+            if (fcActiveList.length === 0) return;
+            fcIndex = (fcIndex + 1) % fcActiveList.length;
+            fcAnswerRevealed = false;
+            updateFlashcardView();
+        }
+
+        function prevFlashcard() {
+            if (fcActiveList.length === 0) return;
+            fcIndex = (fcIndex - 1 + fcActiveList.length) % fcActiveList.length;
+            fcAnswerRevealed = false;
+            updateFlashcardView();
+        }
+
+        function markCurrentFlashcard(isKnown) {
+            if (fcActiveList.length === 0) return;
+            const curr = fcActiveList[fcIndex];
+            if (isKnown) {
+                completedIds.add(curr.id);
+            } else {
+                completedIds.delete(curr.id);
+            }
+            saveProgress();
+            renderQuestions();
+            nextFlashcard();
+        }
+
+        // Reset Modal Handlers
+        function confirmReset() {
+            const modal = document.getElementById('resetModal');
+            modal.classList.remove('opacity-0', 'pointer-events-none');
+            modal.classList.add('opacity-100');
+        }
+
+        function closeResetModal() {
+            const modal = document.getElementById('resetModal');
+            modal.classList.remove('opacity-100');
+            modal.classList.add('opacity-0', 'pointer-events-none');
+        }
+
+        function executeResetProgress() {
+            completedIds.clear();
+            saveProgress();
+            renderQuestions();
+            closeResetModal();
+        }
+    </script>
+</body>
+</html>
